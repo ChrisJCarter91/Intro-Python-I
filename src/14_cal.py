@@ -22,3 +22,30 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+yy = input("Input Year: ")
+mm = input("Input Month: ")
+
+if(yy == "") and (mm == ""):
+    yy = datetime.now().year
+    mm = datetime.now().month
+    output = calendar.month(yy, mm)
+    print(output)
+
+elif (yy == "") and (mm.isdigit()):
+    yy = datetime.now().year
+    mm = int(mm)
+    output = calendar.month(yy, mm)
+    print(output)
+
+elif (yy.isdigit()) and (mm == ""):
+    yy = int(yy)
+    mm = datetime.now().month
+    output = calendar.month(yy, mm)
+    print(output)
+
+elif (yy.isdigit()) and (mm.isdigit()):
+    yy = int(yy)
+    mm = int(mm)
+    output = calendar.month(yy, mm)
+    print(output)
